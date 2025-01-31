@@ -3,29 +3,12 @@ platform linux -- Python 3.12.8, pytest-8.3.4, pluggy-1.5.0
 rootdir: /home/runner/work/Assessment-Backend-Week-1/Assessment-Backend-Week-1
 collected 112 items
 
-days_api/test_api.py .FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 45%]
-FFFFFFFFFFFFFFFFFFFFFF                                                   [ 65%]
-days_api/test_date_functions.py ................FFFFFFFFFFFFFFFFFFFFFFF  [100%]
+days_api/test_api.py ................................................... [ 45%]
+......................                                                   [ 65%]
+days_api/test_date_functions.py .......................................  [100%]
 
-======================== 95 failed, 17 passed in 0.34s =========================
-************* Module app
-days_api/app.py:33:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
-days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
-days_api/app.py:9:0: W0611: Unused convert_to_datetime imported from date_functions (unused-import)
-days_api/app.py:9:0: W0611: Unused get_day_of_week_on imported from date_functions (unused-import)
-days_api/app.py:9:0: W0611: Unused get_days_between imported from date_functions (unused-import)
-days_api/app.py:9:0: W0611: Unused get_current_age imported from date_functions (unused-import)
-************* Module date_functions
-days_api/date_functions.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:10:8: W0707: Consider explicitly re-raising using 'except ValueError as exc' and 'raise ValueError('Unable to convert value to datetime.') from exc' (raise-missing-from)
-days_api/date_functions.py:13:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:18:8: W0707: Consider explicitly re-raising using 'except TypeError as exc' and 'raise TypeError('Datetimes required.') from exc' (raise-missing-from)
-days_api/date_functions.py:21:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:21:23: W0613: Unused argument 'date_val' (unused-argument)
-days_api/date_functions.py:25:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:25:20: W0613: Unused argument 'birthdate' (unused-argument)
+============================= 112 passed in 0.27s ==============================
 
------------------------------------
-Your code has been rated at 5.71/10
+------------------------------------
+Your code has been rated at 10.00/10
 
