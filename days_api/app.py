@@ -2,9 +2,9 @@
 
 # pylint: disable = no-name-in-module
 
-from datetime import datetime, date
+from datetime import datetime
 
-from flask import Flask, Response, request, jsonify
+from flask import Flask, request, jsonify
 
 from date_functions import (convert_to_datetime, get_day_of_week_on,
                             get_days_between, get_current_age)
@@ -106,10 +106,7 @@ def history():
         # complete error handle above
         add_to_history(request)
         start_i = len(app_history) - number
-        print(start_i)
-        print(len(app_history))
-        if start_i <= 0:
-            start_i = 0
+        start_i = max(start_i, 0)
         response_json = app_history[start_i:]
         response_json = response_json[::-1]
         return response_json, 200
@@ -120,19 +117,20 @@ def history():
         return {
             "status": "History cleared"
         }, 200
+    return {}, 400
 
 
 @app.route("/current_age", methods=['GET'])
 def current_age():
     """Current_age route function"""
     args = request.args.to_dict()
-    date = args.get('date')
-    if date is None:
+    date_in = args.get('date')
+    if date_in is None:
         return {
             "error": "Date parameter is required."
         }, 400
     try:
-        age = get_current_age(date)
+        age = get_current_age(date_in)
     except TypeError:
         return {
             "error": "Value for data parameter is invalid."
