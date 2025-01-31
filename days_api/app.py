@@ -29,6 +29,13 @@ def index():
     return jsonify({"message": "Welcome to the Days API."})
 
 
+@app.route("/between", methods=['POST'])
+def post_between():
+    data = request.json
+    print(data)
+    return data
+
+
 if __name__ == "__main__":
     app.config['TESTING'] = True
     app.config['DEBUG'] = True
